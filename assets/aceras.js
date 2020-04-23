@@ -118,9 +118,6 @@
                     type: 'fill',
                     source: {
                         type: 'vector',
-                        //url: 'https://distanciamiento.inspide.com/tiles/aceras.acerasvoro.json' 
-                        // url: 'https://distanciamiento.inspide.com/tiles/aceras.acerasvoro/{z}/{x}/{y}.pbf'
-                        //url: 'https://distanciamiento.inspide.com/tiles/aceras.acerasvoro/{z}/{x}/{y}.pbf'
                         url: 'assets/aceras.acerasvoro.json'
                     },
                     'source-layer': 'aceras.acerasvoro',
