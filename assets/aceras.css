@@ -1,0 +1,365 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mapbox-directions-instructions {
+    overflow-x: hidden !important;
+}
+
+.mapbox-directions-route-summary,
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl,
+.directions-control.directions-control-directions {
+    border-radius: 4px;
+}
+
+.mapboxgl-ctrl-logo,
+.mapbox-directions-instructions {
+    display: none !important;
+}
+
+.ft {
+    position: fixed;
+    display: flex;
+    bottom: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    pointer-events: none;
+    height: 40px;
+}
+
+.lg {
+    width: 25%;
+    height: 100%;
+    background-image: url('Logo_INSPIDE_B.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.legend,
+.dataviewcontrol {
+    max-width: 80px;
+    max-height: 80px;
+    width: 20vh;
+    height: 20vh;
+}
+
+.dataviewcontrol svg {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 99999;
+}
+
+.dataviewcontrol {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 50%;
+    margin: 8px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.min,
+.max,
+.titol,
+.valor {
+    text-shadow: 2px 2px 1px #000000, -2px 2px 1px #000000, -2px -2px 1px #000000, 2px -2px 1px #000000;
+}
+
+.titol {
+    font-size: x-small;
+    color: #ddd;
+}
+
+.valor {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.min,
+.max {
+    font-size: xx-small;
+    color: #ccc;
+    position: absolute;
+}
+
+.min {
+    top: 50%;
+    left: 12px;
+}
+
+.max {
+    top: 50%;
+    right: 12px;
+}
+
+.classnight>div {
+    border-radius: 4px;
+    text-shadow: 2px 2px 1px #000000, -2px 2px 1px #000000, -2px -2px 1px #000000, 2px -2px 1px #000000;
+}
+
+.classnight>div:last-child {
+    border: 1px solid #000000;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+.mapboxgl-popup-tip {
+    border-radius: 0px !important;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: #000000;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: #000000;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: #000000;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: #000000;
+}
+
+.pval {
+    padding: 5px;
+    width: calc(100% -10px);
+    text-align: center;
+    font-size: large;
+}
+
+.icons {
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+    filter: drop-shadow(1px 1px 1px #000000) drop-shadow(-1px 1px 1px #000000) drop-shadow(1px -1px 1px #000000) drop-shadow(-1px -1px 1px #000000);
+}
+
+.wc,
+.dist,
+.distk,
+.distk2 {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(100%);
+}
+
+.wc {
+    background-image: url('wheelchair.svg');
+}
+
+.dist {
+    background-image: url('keep-distance.svg');
+}
+
+.distk {
+    background-image: url('keep-distance-k.svg');
+}
+
+.distk2 {
+    background-image: url('keep-distance-k_2.svg');
+}
+
+.red {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+.sidepanel {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding: 60px 0px 60px 0px;
+    transition: 0.5s;
+}
+
+.sidecontent {
+    position: fixed;
+    bottom: 56px;
+    width: 0px;
+    padding: 0px;
+    height: 100%;
+    height: calc(100% - 250px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    transition: 0.5s;
+}
+
+.sidepanel li,
+.sidepanel h1,
+.sidepanel p,
+.sidepanel ul {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80%;
+    max-width: 800px;
+}
+
+.sidepanel p,
+.sidepanel li {
+    padding: 0px 32px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    text-align: justify;
+}
+
+.sidepanel .cred {
+    font-size: 15px;
+}
+
+.sidepanel a {
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+
+.sidepanel a:hover {
+    color: goldenrod;
+}
+
+.sidepanel h1 {
+    color: #ffffff;
+    background: #111;
+    margin: -20px 32px 12px 32px;
+}
+
+.sidepanel b,
+.sidepanel p:hover {
+    color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+    color: goldenrod;
+   /*  border: solid 2px white; */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    top: 18px !important;
+}
+
+.sidepanel .closebtn:hover {
+    color: #ff0000;
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidepanel img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    max-height: 40vh;
+    padding: 8px 32px 8px 32px;
+}
+
+.sidepanel ul {
+    list-style-type: none;
+    /* padding-left: 100px; */
+    /*  margin-left: 10px; */
+    margin: 0px;
+    padding: 0px;
+}
+
+.sidepanel li {
+    max-height: 20px;
+    padding-left: 60px !important;
+    filter: invert(100%);
+    margin-bottom: 20px;
+}
+
+.sidepanel li:hover {
+    color: #000000;
+}
+
+.sidepanel li.lidist {
+    background: url('keep-distance.svg') no-repeat left center;
+}
+
+.sidepanel li.lidistk {
+    background: url('keep-distance-k.svg') no-repeat left center;
+}
+
+.sidepanel li.lidistk2 {
+    background: url('keep-distance-k_2.svg') no-repeat left center;
+}
+
+.openbtn {
+    position: absolute;
+    top: calc(50vh - 25px);
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 10px 15px 10px 10px;
+    border: none;
+    z-index: 1;
+    border-radius: 0px 50% 50% 0px;
+}
+
+.openbtn:hover {
+    color: #17a2b8;
+}
+
+.lg2 {
+    pointer-events: all;
+    display: none;
+}
+
+.lg2:hover {
+    cursor: pointer;
+}
+
+.blanco{
+    color: #ffffff;
+}
+
+.rojo{
+    color: #ff0000;
+}
+
+.mapboxgl-ctrl-geocoder input[type='text']{
+    min-width: 330px;
+    padding-left: 40px;
+}

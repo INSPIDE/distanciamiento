@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <meta name="Description"
+        content="Un vistazo a las calles de Madrid a través del indicador de distanciamiento peatonal en tiempos del COVID-19." />
+    <meta name="keywords"
+        content="COVID-19, movilidad, accesibilidad, Madrid, aceras, peatones, peatonal, sharing, insight, indicador" />
+
+    <meta name="geo.region" content="ES-M" />
+    <meta name="geo.placename" content="Madrid" />
+    <meta name="geo.position" content="40.416633;-3.703423" />
+    <meta name="ICBM" content="40.416633, -3.703423" />
+
+    <meta itemprop="name" content="Distanciamiento peatonal en Madrid" />
+    <meta itemprop="description"
+        content="Un vistazo a las calles de Madrid a través del indicador de distanciamiento peatonal en tiempos del COVID-19." />
+    <meta itemprop="image" content="https://distanciamiento.inspide.com/assets/twittercard.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@inspide_me" />
+    <meta name="twitter:creator" content="@abel_vm" />
+    <meta name="twitter:title" content="Distanciamiento peatonal en Madrid" />
+    <meta name="twitter:description"
+        content="Un vistazo a las calles de Madrid a través del indicador de distanciamiento peatonal en tiempos del COVID-19." />
+    <meta name="twitter:image" content="https://distanciamiento.inspide.com/assets/twittercard.png" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:description"
+        content="Un vistazo a las calles de Madrid a través del indicador de distanciamiento peatonal en tiempos del COVID-19." />
+    <meta property="og:title" content="Distanciamiento peatonal en Madrid">
+    <meta property="og:site_name" content="Distanciamiento peatonal en Madrid" />
+    <meta property="og:url" content="distanciamiento.inspide.com" />
+    <meta property="og:image" content="https://distanciamiento.inspide.com/assets/twittercard.png" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="500" />
+    <meta property="article:published_time" content="2020-04-20" />
+    <meta property="article:author" content="Abel Vázquez Montoro" />
+    <meta property="article:tag" content="Madrid" />
+    <meta property="article:tag" content="COVID-19" />
+    <meta property="article:tag" content="movilidad" />
+    <meta property="article:tag" content="accesibilidad" />
+    <meta property="article:tag" content="aceras" />
+    <meta property="article:tag" content="peatones" />
+    <meta property="article:tag" content="peatonal" />
+    <meta property="article:tag" content="sharing" />
+    <meta property="article:tag" content="insight" />
+    <meta property="article:tag" content="indicador" />
+
+    <title>Distanciamiento peatonal en Madrid</title>
+
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_180x180.png">
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
+    <script src="assets/aceras.js"></script>
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+        type="text/css" />
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css"
+        type="text/css" />
+    <link href="assets/aceras.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class='ft'>
+        <div class='lg'></div>
+    </div>
+    <div id="sidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="info_close()"
+            title="Cerrar panel informativo">&times;</a>
+        <div class="sideheader">
+            <h1>Distanciamiento peatonal en Madrid</h1>
+        </div>
+        <div class="sidecontent">
+            <p><b>Distanciamiento peatonal</b>: máxima distancia posible de cruce entre peatones en las aceras y calles
+                peatonales, calculado a partir de los datos abiertos del <a href="https://datos.madrid.es"
+                    target=_blank>Ayuntamiento de Madrid</a>.
+            </p>
+            <p> Partiendo de la <a
+                    href="https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/presidencia/Documents/2020/GUIACENTROSTRABAJOCOVID19b.pdf"
+                    target=_blank>distancia interpersonal recomendada de al menos 2 metros</a> y teniendo en cuenta que
+                para estudios urbanísticos, <a href="https://www.researchgate.net/publication/264215798_Personal_space_evasive_movement_and_pedestrian_level_of_service" target=_blank>se
+                    toma un círculo de 0.5m de radio como el espacio ocupado por un peatón</a> y que se considera una
+                distancia de seguridad de 0.25m respecto a fachadas, bordillos y otros elementos constructivos, el ancho
+                mínimo de senda peatonal que garantiza dicha distancia interpersonal recomendada, asciende a
+                <b>3.5m</b>.</p>
+            <img src="assets/dist_1.svg">
+            <p>En el caso de de ir acompañado de un@ niñ@, este ancho mínimo se ve incrementado hasta los <b>4m</b>.</p>
+            <img src="assets/dist_2.svg">
+            <p>Que ascendería hasta los <b>4.5m</b> en el caso de cruzarnos con otro tandem adulto-niñ@.</p>
+            <img src="assets/dist_3.svg">
+            <p>El calculador de rutas <b>A → B</b> te recomienda las vías por las que ir andando del punto A al punto B,
+                como una referencia sobre la cual elegir la acera cumpla con el distanciamiento recomendado.</p>
+            <img src="assets/acera.svg">
+            <p>Al mover el cursor sobre tramos peatonales, o tocar en el móvil, se muestra el ancho de la zona
+                peatonal y si este permite un cruce entre peatones cumpliendo las recomendaciones.</p>
+            <img src="assets/ancho.svg">
+            <p>Siendo los indicadores de posibilidad de cumplimiento de la distancia recomendada en ese tramo para el
+                caso de cruce con otro(s) peatones tal que (en <span class="blanco">blanco</span> si se puede y en <span
+                    class='rojo'>rojo</span> si no):</p>
+            <ul>
+                <li class="lidist">Entre dos peatones</li>
+                <li class="lidistk">Entre peatón y tandem adulto-niñ@</li>
+                <li class="lidistk2">Entre dos tándems adulto-niñ@</li>
+            </ul>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p class="cred">Este desarrollo se ha hecho con mucho <a>♥</a> por el equipo de <a
+                    href="http://www.inspide.com" target=_blank>inspide</a> desde nuestras respectivas casas en Abril
+                de 2020. El código de esta apicación está disponible con licencia <a
+                    href="https://opensource.org/licenses/MIT" target=_blank>MIT</a> en <a
+                    href="https://github.com/INSPIDE/distanciamiento" target=_blank>este repositorio de GitHub</a>.
+                <p>
+                    <p></p>
+                    <p></p>
+        </div>
+        <div class='ft ft2'>
+            <div class='lg lg2'></div>
+        </div>
+    </div>
+    <button class="openbtn" onclick="info_open()" title="Abrir panel de información">ⓘ</button>
+</body>
+
+</html>
