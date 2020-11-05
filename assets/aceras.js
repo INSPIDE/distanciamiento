@@ -74,6 +74,7 @@
                 'dragRotate': false,
                 'pitchWithRotate': false,
                 'locale': 'es',
+                'antialias': true,
                 'language': "es",
                 'maxBounds': [-3.889, 40.312, -3.5179, 40.6437]
             });
