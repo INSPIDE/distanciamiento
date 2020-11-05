@@ -120,7 +120,7 @@
                         type: 'vector',
                         url: 'assets/aceras.acerasvoro.json'
                     },
-                    'source-layer': 'aceras.acerasvoro',
+                    'source-layer': 'aceras',
                     "paint": {
                         "fill-color": [
                             'interpolate-lab',
